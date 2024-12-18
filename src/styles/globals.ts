@@ -1,6 +1,11 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
+  :root {
+    --white: #ffffff;
+    --pomodoro: #ba4949;
+  }
+
   * {
     margin: 0;
     padding: 0;
