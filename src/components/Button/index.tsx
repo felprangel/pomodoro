@@ -13,6 +13,7 @@ const PomodoroButton = styled.button`
   font-size: 1.5rem;
   border: none;
   border-radius: 0.5rem;
+  box-shadow: var(--white-shadow) 0px 6px 0px;
 
   &:hover {
     filter: brightness(0.9);
