@@ -3,7 +3,9 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
   :root {
     --white: #ffffff;
+    --white-shadow: #EBEBEB;
     --pomodoro: #ba4949;
+    --pomodoro-light: #c15c5c;
   }
 
   * {
