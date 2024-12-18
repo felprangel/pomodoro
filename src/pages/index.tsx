@@ -26,7 +26,7 @@ const CustomPageLayout = styled(PageLayout)`
 const TimerContainer = styled.div`
   width: 70%;
   height: 45vh;
-  background-color: #c15c5c;
+  background-color: var(--pomodoro-light);
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
