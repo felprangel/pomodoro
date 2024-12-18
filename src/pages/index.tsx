@@ -1,3 +1,4 @@
+import { Button } from "@/components/Button";
 import PageLayout from "@/components/PageLayout";
 import styled from "styled-components";
 
@@ -6,6 +7,7 @@ export default function Home() {
     <CustomPageLayout>
       <TimerContainer>
         <Timer>25:00</Timer>
+        <Button>START</Button>
       </TimerContainer>
     </CustomPageLayout>
   );
