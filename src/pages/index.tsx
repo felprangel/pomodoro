@@ -4,7 +4,9 @@ import styled from "styled-components";
 export default function Home() {
   return (
     <CustomPageLayout>
-      <h1>Teste</h1>
+      <TimerContainer>
+        <p>25:00</p>
+      </TimerContainer>
     </CustomPageLayout>
   );
 }
@@ -17,4 +19,11 @@ const CustomPageLayout = styled(PageLayout)`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+const TimerContainer = styled.div`
+  width: 70%;
+  height: 45vh;
+  background-color: #c15c5c;
+  border-radius: 0.5rem;
 `;
