@@ -10,8 +10,8 @@ export default function Home() {
 }
 
 const CustomPageLayout = styled(PageLayout)`
-  background-color: red;
-  border: 1px solid black;
+  background-color: var(--pomodoro);
+  color: var(--white);
   min-height: 100vh;
   min-width: 100vw;
 `;
