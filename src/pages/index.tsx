@@ -1,15 +1,19 @@
 import { Button } from "@/components/Button";
+import { Header } from "@/components/Header";
 import PageLayout from "@/components/PageLayout";
 import styled from "styled-components";
 
 export default function Home() {
   return (
-    <CustomPageLayout>
-      <TimerContainer>
-        <Timer>25:00</Timer>
-        <Button>START</Button>
-      </TimerContainer>
-    </CustomPageLayout>
+    <>
+      <Header />
+      <CustomPageLayout>
+        <TimerContainer>
+          <Timer>25:00</Timer>
+          <Button>START</Button>
+        </TimerContainer>
+      </CustomPageLayout>
+    </>
   );
 }
 
@@ -33,6 +37,7 @@ const TimerContainer = styled.div`
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  padding-bottom: 1rem;
 `;
 
 const Timer = styled.p`
