@@ -27,6 +27,7 @@ const TimerContainer = styled.div`
   background-color: #c15c5c;
   border-radius: 0.5rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 `;
