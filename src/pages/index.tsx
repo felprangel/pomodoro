@@ -14,4 +14,7 @@ const CustomPageLayout = styled(PageLayout)`
   color: var(--white);
   min-height: 100vh;
   min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
