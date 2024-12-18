@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <CustomPageLayout>
       <TimerContainer>
-        <p>25:00</p>
+        <Timer>25:00</Timer>
       </TimerContainer>
     </CustomPageLayout>
   );
@@ -29,4 +29,9 @@ const TimerContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+const Timer = styled.p`
+  font-size: 7rem;
+  font-weight: 700;
 `;
