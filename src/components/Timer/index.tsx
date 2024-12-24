@@ -48,14 +48,29 @@ export function Timer() {
   }
 
   return (
-    <div>
-      <div>{formatTime(timeLeft)}</div>
-      <div>
-        <button onClick={handleStartPause}>
-          {isRunning ? "Pausar" : "Iniciar"}
-        </button>
-        <button onClick={handleReset}>Resetar</button>
-      </div>
-    </div>
+    <TimerContainer>
+      <StyledTimer>{formatTime(timeLeft)}</StyledTimer>
+      <Button onClick={handleStartPause}>
+        {isRunning ? "PAUSE" : "START"}
+      </Button>
+    </TimerContainer>
   );
 }
+
+const TimerContainer = styled.div`
+  width: 70%;
+  height: 45vh;
+  background-color: var(--pomodoro-light);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
+`;
+
+const StyledTimer = styled.p`
+  font-size: 7rem;
+  font-weight: 700;
+`;
