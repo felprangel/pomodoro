@@ -41,12 +41,6 @@ export function Timer() {
     setIsRunning(!isRunning);
   }
 
-  function handleReset() {
-    setIsRunning(false);
-    setIsWorking(true);
-    setTimeLeft(workTime * 60);
-  }
-
   return (
     <TimerContainer>
       <StyledTimer>{formatTime(timeLeft)}</StyledTimer>
