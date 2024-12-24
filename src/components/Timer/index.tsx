@@ -73,10 +73,12 @@ export function Timer() {
   return (
     <TimerContainer working={isWorking}>
       <StyledTimer>{formatTime(timeLeft)}</StyledTimer>
-      <Button onClick={handleStartPause}>
-        {isRunning ? "PAUSE" : "START"}
-      </Button>
-      <Button onClick={handleReset}>RESET</Button>
+      <ButtonContainer>
+        <Button onClick={handleStartPause}>
+          {isRunning ? "PAUSE" : "START"}
+        </Button>
+        <Button onClick={handleReset}>RESET</Button>
+      </ButtonContainer>
     </TimerContainer>
   );
 }
@@ -98,4 +100,9 @@ const TimerContainer = styled.div<{ working: boolean }>`
 const StyledTimer = styled.p`
   font-size: 7rem;
   font-weight: 700;
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  gap: 1rem;
 `;
