@@ -2,14 +2,22 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Button } from "../Button";
 
-export function Timer() {
-  const workTime = 1;
-  const shortBreakTime = 1;
+interface TimerProps {
+  changeBgColor: (isWorking: boolean) => void;
+}
+
+export function Timer(props: TimerProps) {
+  const workTime = 25;
+  const shortBreakTime = 5;
   const longBreakTime = 15;
-  const [isWorking, setIsWorking] = useState(true);
-  const [timeLeft, setTimeLeft] = useState(workTime * 60);
-  const [isRunning, setIsRunning] = useState(false);
-  const [workSessions, setWorkSessions] = useState(0);
+  const [isWorking, setIsWorking] = useState<boolean>(true);
+  const [isRunning, setIsRunning] = useState<boolean>(false);
+  const [timeLeft, setTimeLeft] = useState<number>(workTime * 60);
+  const [workSessions, setWorkSessions] = useState<number>(0);
+
+  useEffect(() => {
+    props.changeBgColor(isWorking);
+  }, [isWorking, props]);
 
   useEffect(() => {
     let timer: NodeJS.Timeout | null = null;
