@@ -1,6 +1,6 @@
-import { Button } from "@/components/Button";
 import { Header } from "@/components/Header";
 import PageLayout from "@/components/PageLayout";
+import { Timer } from "@/components/Timer";
 import styled from "styled-components";
 
 export default function Home() {
@@ -8,10 +8,7 @@ export default function Home() {
     <>
       <Header />
       <CustomPageLayout>
-        <TimerContainer>
-          <Timer>25:00</Timer>
-          <Button>START</Button>
-        </TimerContainer>
+        <Timer />
       </CustomPageLayout>
     </>
   );
@@ -25,22 +22,4 @@ const CustomPageLayout = styled(PageLayout)`
   display: flex;
   align-items: center;
   justify-content: center;
-`;
-
-const TimerContainer = styled.div`
-  width: 70%;
-  height: 45vh;
-  background-color: var(--pomodoro-light);
-  border-radius: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  padding-bottom: 1rem;
-`;
-
-const Timer = styled.p`
-  font-size: 7rem;
-  font-weight: 700;
 `;
