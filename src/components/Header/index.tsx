@@ -9,7 +9,7 @@ export function Header() {
 }
 
 const HeaderContainer = styled.nav`
-  background-color: var(--pomodoro);
+  background-color: transparent;
   color: var(--white);
   min-height: 4rem;
   width: 100%;
