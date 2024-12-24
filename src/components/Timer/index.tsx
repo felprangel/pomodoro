@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { Button } from "../Button";
 
 export function Timer() {
-  const workTime = 25;
-  const shortBreakTime = 5;
+  const workTime = 1;
+  const shortBreakTime = 1;
   const longBreakTime = 15;
   const [isWorking, setIsWorking] = useState(true);
   const [timeLeft, setTimeLeft] = useState(workTime * 60);
@@ -74,10 +74,12 @@ export function Timer() {
     <TimerContainer working={isWorking}>
       <StyledTimer>{formatTime(timeLeft)}</StyledTimer>
       <ButtonContainer>
-        <Button onClick={handleStartPause}>
+        <Button working={isWorking} onClick={handleStartPause}>
           {isRunning ? "PAUSE" : "START"}
         </Button>
-        <Button onClick={handleReset}>RESET</Button>
+        <Button working={isWorking} onClick={handleReset}>
+          RESET
+        </Button>
       </ButtonContainer>
     </TimerContainer>
   );
