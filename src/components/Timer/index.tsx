@@ -19,7 +19,7 @@ export function Timer() {
     }
 
     if (timeLeft === 0) {
-      setIsWorking((prev) => !prev);
+      setIsWorking(!isWorking);
       setTimeLeft((isWorking ? breakTime : workTime) * 60);
     }
 
