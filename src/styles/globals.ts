@@ -6,6 +6,8 @@ export const GlobalStyle = createGlobalStyle`
     --white-shadow: #EBEBEB;
     --pomodoro: #ba4949;
     --pomodoro-light: #c15c5c;
+    --break-time: #38858A;
+    --break-time-light: #4C9196;
   }
 
   * {
