@@ -4,10 +4,12 @@ import { Button } from "../Button";
 
 export function Timer() {
   const workTime = 25;
-  const breakTime = 5;
+  const shortBreakTime = 5;
+  const longBreakTime = 15;
   const [isWorking, setIsWorking] = useState(true);
   const [timeLeft, setTimeLeft] = useState(workTime * 60);
   const [isRunning, setIsRunning] = useState(false);
+  const [workSessions, setWorkSessions] = useState(0);
 
   useEffect(() => {
     let timer: NodeJS.Timeout | null = null;
@@ -21,14 +23,33 @@ export function Timer() {
     }
 
     if (timeLeft === 0) {
-      setIsWorking(!isWorking);
-      setTimeLeft((isWorking ? breakTime : workTime) * 60);
+      if (isWorking) {
+        setWorkSessions(workSessions + 1);
+      }
+
+      const nextIsWorking = !isWorking;
+      const nextTime = nextIsWorking
+        ? workTime * 60
+        : workSessions > 0 && workSessions % 4 === 0
+        ? longBreakTime * 60
+        : shortBreakTime * 60;
+
+      setIsWorking(nextIsWorking);
+      setTimeLeft(nextTime);
     }
 
     return () => {
       if (timer) clearInterval(timer);
     };
-  }, [isRunning, timeLeft, isWorking, workTime, breakTime]);
+  }, [
+    isRunning,
+    timeLeft,
+    isWorking,
+    workSessions,
+    workTime,
+    shortBreakTime,
+    longBreakTime,
+  ]);
 
   function formatTime(seconds: number) {
     const minutes = Math.floor(seconds / 60);
