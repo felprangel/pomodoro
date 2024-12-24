@@ -71,7 +71,7 @@ export function Timer() {
   }
 
   return (
-    <TimerContainer>
+    <TimerContainer working={isWorking}>
       <StyledTimer>{formatTime(timeLeft)}</StyledTimer>
       <Button onClick={handleStartPause}>
         {isRunning ? "PAUSE" : "START"}
@@ -81,10 +81,11 @@ export function Timer() {
   );
 }
 
-const TimerContainer = styled.div`
+const TimerContainer = styled.div<{ working: boolean }>`
   width: 70%;
   height: 45vh;
-  background-color: var(--pomodoro-light);
+  background-color: ${(props) =>
+    props.working ? "var(--pomodoro-light)" : "var(--break-time-light)"};
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
