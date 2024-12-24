@@ -76,6 +76,7 @@ export function Timer() {
       <Button onClick={handleStartPause}>
         {isRunning ? "PAUSE" : "START"}
       </Button>
+      <Button onClick={handleReset}>RESET</Button>
     </TimerContainer>
   );
 }
