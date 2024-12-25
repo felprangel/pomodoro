@@ -44,6 +44,7 @@ export function Timer(props: TimerProps) {
 
       setIsWorking(nextIsWorking);
       setTimeLeft(nextTime);
+      setIsRunning(false);
     }
 
     return () => {
