@@ -45,6 +45,7 @@ export function Timer(props: TimerProps) {
       setIsWorking(nextIsWorking);
       setTimeLeft(nextTime);
       setIsRunning(false);
+      playSound();
     }
 
     return () => {
@@ -77,6 +78,11 @@ export function Timer(props: TimerProps) {
     setIsRunning(false);
     setIsWorking(true);
     setTimeLeft(workTime * 60);
+  }
+
+  function playSound() {
+    const audio = new Audio("alarm.mp3");
+    audio.play();
   }
 
   return (
