@@ -105,6 +105,10 @@ const TimerContainer = styled.div<{ working: boolean }>`
   justify-content: center;
   gap: 1rem;
   padding-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `;
 
 const StyledTimer = styled.p`
