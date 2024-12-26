@@ -16,10 +16,26 @@ export function Timer(props: TimerProps) {
   const [workSessions, setWorkSessions] = useState<number>(0);
 
   useEffect(() => {
+    if (Notification.permission === "default") {
+      Notification.requestPermission();
+    }
+  }, []);
+
+  useEffect(() => {
     props.changeBgColor(isWorking);
   }, [isWorking, props]);
 
   useEffect(() => {
+    function sendNotification() {
+      if (Notification.permission === "granted") {
+        new Notification("Pomodoro Timer", {
+          body: isWorking
+            ? "Time to take a break!"
+            : "Time to get back to work!",
+        });
+      }
+    }
+
     let timer: NodeJS.Timeout | null = null;
 
     if (isRunning) {
@@ -46,6 +62,7 @@ export function Timer(props: TimerProps) {
       setTimeLeft(nextTime);
       setIsRunning(false);
       playSound();
+      sendNotification();
     }
 
     return () => {
