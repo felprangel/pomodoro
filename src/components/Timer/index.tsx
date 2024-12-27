@@ -119,7 +119,7 @@ export function Timer(props: TimerProps) {
 
 const TimerContainer = styled.div<{ working: boolean }>`
   width: 70%;
-  height: 45vh;
+  height: 50vh;
   background-color: ${(props) =>
     props.working ? "var(--pomodoro-light)" : "var(--break-time-light)"};
   border-radius: 0.5rem;
