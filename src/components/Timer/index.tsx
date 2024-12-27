@@ -47,7 +47,7 @@ export function Timer(props: TimerProps) {
     }
 
     if (timeLeft === 0) {
-      if (isWorking) {
+      if (!isWorking) {
         setWorkSessions(workSessions + 1);
       }
 
