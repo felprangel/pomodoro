@@ -54,7 +54,7 @@ export function Timer(props: TimerProps) {
       const nextIsWorking = !isWorking;
       const nextTime = nextIsWorking
         ? workTime * 60
-        : workSessions > 0 && workSessions % 4 === 0
+        : workSessions > 1 && workSessions % 4 === 0
         ? longBreakTime * 60
         : shortBreakTime * 60;
 
