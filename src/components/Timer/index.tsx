@@ -13,7 +13,7 @@ export function Timer(props: TimerProps) {
   const [isWorking, setIsWorking] = useState<boolean>(true);
   const [isRunning, setIsRunning] = useState<boolean>(false);
   const [timeLeft, setTimeLeft] = useState<number>(workTime * 60);
-  const [workSessions, setWorkSessions] = useState<number>(0);
+  const [workSessions, setWorkSessions] = useState<number>(1);
 
   useEffect(() => {
     if (Notification.permission === "default") {
