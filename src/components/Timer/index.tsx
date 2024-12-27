@@ -104,6 +104,7 @@ export function Timer(props: TimerProps) {
 
   return (
     <TimerContainer working={isWorking}>
+      <SessionText>#{workSessions}</SessionText>
       <StyledTimer>{formatTime(timeLeft)}</StyledTimer>
       <ButtonContainer>
         <Button working={isWorking} onClick={handleStartPause}>
@@ -133,6 +134,11 @@ const TimerContainer = styled.div<{ working: boolean }>`
   @media (max-width: 768px) {
     width: 90%;
   }
+`;
+
+const SessionText = styled.p`
+  font-size: 1.5rem;
+  font-weight: 700;
 `;
 
 const StyledTimer = styled.p`
