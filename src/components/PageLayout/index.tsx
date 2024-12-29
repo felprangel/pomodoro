@@ -1,9 +1,9 @@
-import React, { HTMLAttributes } from "react";
-import styled, { css } from "styled-components";
+import React, { HTMLAttributes } from 'react'
+import styled, { css } from 'styled-components'
 
 export interface PageLayoutProps extends HTMLAttributes<HTMLDivElement> {
-  children: React.ReactNode;
-  fixed?: boolean;
+  children: React.ReactNode
+  fixed?: boolean
 }
 
 export default function PageLayout({ fixed, ...props }: PageLayoutProps) {
@@ -11,7 +11,7 @@ export default function PageLayout({ fixed, ...props }: PageLayoutProps) {
     <PageLayoutStyled {...props} $fixed={!!fixed}>
       {props.children}
     </PageLayoutStyled>
-  );
+  )
 }
 
 const PageLayoutStyled = styled.div<{ $fixed?: boolean }>`
@@ -49,4 +49,4 @@ const PageLayoutStyled = styled.div<{ $fixed?: boolean }>`
   @media (max-width: 1200px) {
     max-width: 73.125rem;
   }
-`;
+`

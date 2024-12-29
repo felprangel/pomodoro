@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export function Header() {
   return (
     <HeaderContainer>
       <Titulo>Pomodoro</Titulo>
     </HeaderContainer>
-  );
+  )
 }
 
 const HeaderContainer = styled.nav`
@@ -17,9 +17,9 @@ const HeaderContainer = styled.nav`
   padding: 0 4rem;
   display: flex;
   align-items: center;
-`;
+`
 
 const Titulo = styled.h1`
   font-size: 2rem;
   font-weight: 700;
-`;
+`

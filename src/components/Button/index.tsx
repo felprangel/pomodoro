@@ -1,8 +1,8 @@
-import { ButtonHTMLAttributes } from "react";
-import styled from "styled-components";
+import { ButtonHTMLAttributes } from 'react'
+import styled from 'styled-components'
 
 interface PomodoroButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  working: boolean;
+  working: boolean
 }
 
 export function Button({ working, ...props }: PomodoroButtonProps) {
@@ -10,13 +10,12 @@ export function Button({ working, ...props }: PomodoroButtonProps) {
     <PomodoroButton working={working} {...props}>
       {props.children}
     </PomodoroButton>
-  );
+  )
 }
 
 const PomodoroButton = styled.button<{ working: boolean }>`
   background-color: var(--white);
-  color: ${(props) =>
-    props.working ? "var(--pomodoro)" : "var(--break-time)"};
+  color: ${props => (props.working ? 'var(--pomodoro)' : 'var(--break-time)')};
   padding: 1rem 3rem;
   font-weight: 700;
   font-size: 1.5rem;
@@ -28,4 +27,4 @@ const PomodoroButton = styled.button<{ working: boolean }>`
     filter: brightness(0.9);
     cursor: pointer;
   }
-`;
+`
